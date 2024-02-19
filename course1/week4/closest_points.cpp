@@ -13,6 +13,7 @@
 #define MIN_COORD 1e-9
 
 #define TIME_LIMIT_CPP 1
+
 // https://www.geeksforgeeks.org/closest-pair-of-points-using-divide-and-conquer-algorithm/
 // https://www.youtube.com/watch?v=6u_hWxbOc7E&ab_channel=iDeer7
 
