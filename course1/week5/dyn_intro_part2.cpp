@@ -7,7 +7,7 @@
 #include <iomanip>
 
 // https://www.youtube.com/watch?v=oBt53YbR9Kk&t=1565s&ab_channel=freeCodeCamp.org
-
+// https://stackoverflow.com/questions/5134891/how-do-i-use-valgrind-to-find-memory-leaks
 
 std::ostream& operator<< (std::ostream &os, const std::vector<int> &data) {
   size_t idx = 0;
@@ -18,10 +18,10 @@ std::ostream& operator<< (std::ostream &os, const std::vector<int> &data) {
   return os;
 }
 
-uint64_t fib(const int &n) {
+uint64_t fib(const size_t &n) {
   std::vector<uint64_t> table(n + 1, 0);
   table[1] = 1;
-  for (int i = 0; i <= n; i++) {
+  for (size_t i = 0; i < n; i++) {
     table[i + 1] += table[i];
     if ((i + 2) <= n) {
       table[i + 2] += table[i];
@@ -254,7 +254,7 @@ int main () {
   std::cout << "fib " << fib(6) <<  ", expected " << 8 << std::endl;
   std::cout << "fib " << fib(7) <<  ", expected " << 13 << std::endl;
   std::cout << "fib " << fib(8) <<  ", expected " << 21 << std::endl;
-  // std::cout << "fib " << fib(50) <<  ", expected " << 12586269025 << std::endl;
+  std::cout << "fib " << fib(50) <<  ", expected " << 12586269025 << std::endl;
 
   std::cout << "GridTraveler " << GridTraveler(1, 1) <<  ", expected " << 1 << std::endl;
   std::cout << "GridTraveler " << GridTraveler(2, 3) <<  ", expected " << 3 << std::endl;
@@ -335,10 +335,10 @@ int main () {
   std::cout << " expected ";
   std::cout << expected << std::endl;
   
-  // std::cout << "AllConstruct ";
-  // std::cout << AllConstruct(
-  //     "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef", 
-  //     {"e", "ee", "eeee", "eeeee", "eeeeee"});
-  // std::cout << " expected " << AllConstruct_t({}) << std::endl;
+  std::cout << "AllConstruct ";
+  std::cout << AllConstruct(
+      "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef", 
+      {"e", "ee", "eeee", "eeeee", "eeeeee"});
+  std::cout << " expected " << AllConstruct_t({}) << std::endl;
 
 }
